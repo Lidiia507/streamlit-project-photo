@@ -10,3 +10,9 @@ uploaded_video = st.file_uploader("Оберіть відео", type=["mp4", "mov
 
 if uploaded_video is not None:
     st.video(uploaded_video)
+uploaded_excel = st.file_uploader("Оберіть таблицю Excel", type=["xlsx", "xls"])
+
+if uploaded_excel is not None:
+    df = pd.read_excel(uploaded_excel)
+    st.write("Вміст таблиці:")
+    st.dataframe(df)
